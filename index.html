@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Desarrollador</title>    
+    <link rel="stylesheet" href="gaa.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="relative">
+    <div class="overlay"></div>
+
+
+    <header class="relative container mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="log.png"Logo" class="h-10">
+            <span class="text-2xl font-bold text-white">Yobrunox</span>
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="https://wa.me/51971986090?text=¡Hola!%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20de%20software%20e%20ingeniería%20de%20sistemas.%20Me%20gustaría%20saber%20más%20sobre%20cómo%20pueden%20ayudarme%20a%20crear%20o%20mejorar%20mi%20proyecto%20digital.%20¡Espero%20su%20respuesta!" 
+                    class="text-white hover:text-blue-400 transition top-2"
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgb(0, 255, 34);transform: msFilter"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                </a></li>
+                <li><a href="#inicio" class="text-white hover:text-blue-400 transition">Inicio</a></li>
+                <li><a href="#proyectos" class="text-white hover:text-blue-400 transition">Proyectos</a></li>
+                <li><a href="#contacto" class="text-white hover:text-blue-400 transition">Contacto</a></li>
+                <li><a href="#afiliado" class="text-white hover:text-blue-400 transition">Afiliados</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main class="container mx-auto px-4 mt-12" id="inicio">
+        <section class="hero flex items-center">
+            <div class="w-1/2 pr-8">
+                <div class="w-1/2 pr-8">
+                    <h1 id="title" class="text-5xl font-bold text-blue-400 typewriter"></h1>
+                    <p id="subtitle" class="mt-4 text-gray-300 text-2xl typewriter"></p>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const titleText = "Ingeniero de ";
+                        const titleSpan = '<span class="text-yellow-500">Sistemas</span>'; // Palabra con color
+                        const subtitleText1 = "Transformando ideas en experiencias";  // Primera línea
+                        const subtitleText2 = " digitales únicas con código innovador.";  // Segunda línea
+                        
+                        let titleIndex = 0;
+                        let subtitleIndex1 = 0;
+                        let subtitleIndex2 = 0;
+                        let titleDone = false;
+            
+                        function typeTitle() {
+                            if (titleIndex < titleText.length) {
+                                document.getElementById("title").innerHTML += titleText.charAt(titleIndex);
+                                titleIndex++;
+                                setTimeout(typeTitle, 100);
+                            } else if (!titleDone) {
+                                document.getElementById("title").innerHTML += titleSpan; // Inserta el span de color
+                                titleDone = true;
+                                setTimeout(typeSubtitle1, 500);
+                            }
+                        }
+            
+                        function typeSubtitle1() {
+                            if (subtitleIndex1 < subtitleText1.length) {
+                                document.getElementById("subtitle").innerHTML += subtitleText1.charAt(subtitleIndex1);
+                                subtitleIndex1++;
+                                setTimeout(typeSubtitle1, 50);
+                            } else {
+                                document.getElementById("subtitle").innerHTML += "<br>"; // Salto de línea
+                                setTimeout(typeSubtitle2, 200);
+                            }
+                        }
+            
+                        function typeSubtitle2() {
+                            if (subtitleIndex2 < subtitleText2.length) {
+                                document.getElementById("subtitle").innerHTML += subtitleText2.charAt(subtitleIndex2);
+                                subtitleIndex2++;
+                                setTimeout(typeSubtitle2, 50);
+                            } else {
+                                document.getElementById("title").style.borderRight = "none";
+                                document.getElementById("subtitle").style.borderRight = "none";
+                            }
+                        }
+            
+                        typeTitle();
+                    });
+                </script>
+            </div>
+            <div class="">
+                <img src="me.png" alt="Programador en laptop" class="">
+            </div>
+        </section>
+        <section class="projects mt-8" id="proyectos">
+            <h2 class="text-3xl text-center mb-4 font-black">Proyectos destacados</h2>
+            <div class="flex flex-col items-center gap-4"> 
+                <div class="project-card ">
+                    <img src="img/ERP.png" alt="Proyecto 1" class="w-full aspect-video rounded-md"> 
+                    <h1 class="text-lg text-center mt-2 mb-2">ERP:  <span>Simplifica la gestión de inventario, compras y ventas. Genera PDFs y reportes con análisis de datos para optimizar tu negocio.</span></h1>
+                </div>
+        
+                <div class="project-card">
+                    <img src="img/1mobile.png" alt="Proyecto 2" class="w-full aspect-[9/16] rounded-md"> 
+                    <h1 class="text-lg text-center mt-2 mb-2">Aplicación de contabilidad: <span>Calcula intereses y gestiona productos para un mejor control de negocios y finanzas.</span></h1>    
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+
+        <section class="contact mt-16 text-center" id="contacto">
+            <h2 class="text-3xl mb-8 font-black">Contacto</h2>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
+                <div class="project-card bg-gray-800 p-4 rounded-lg text-center w-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: msFilter"><path d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z"></path><path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path></svg>                    
+                    <h2 class="mt-4 text-xl text-[1.5rem]">Telefono</h2>
+                    <p class="text-gray-300">📱 +51 916617640</p>
+                </div>
+                <div class="project-card bg-gray-800 p-4 rounded-lg text-center w-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: msFilter"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path></svg>
+                    <h3 class="mt-4 text-xl text-[1.5rem]">Email</h3>
+                    <p class="text-gray-300">📧 brunoxaguilare@gmail.com</p>
+                </div>
+                <div class="project-card bg-gray-800 p-4 rounded-lg text-center w-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: msFilter"><path d="M21 7h-6a1 1 0 0 0-1 1v3h-2V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM8 6h2v2H8V6zM6 16H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V6h2v2zm4 8H8v-2h2v2zm0-4H8v-2h2v2zm9 4h-2v-2h2v2zm0-4h-2v-2h2v2z"></path></svg>
+                    <h3 class="mt-4 text-xl text-[1.5rem]">AEBI</h3>
+                    <p class="text-gray-300">Business experience</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="collaborations mt-16 text-center" id="afiliado">
+            <h2 class="text-3xl mb-8 font-black">Colaboraciones</h2>
+
+            <div class="colla flex justify-center space-x-8">
+                <img src="me-ghibli.png" alt="Yobrunox">
+                <img src="aebi-only car.jpg" alt="">
+            </div>
+        </section> 
+    </main>
+
+    <footer class="bg-gray-900 text-center py-4 mt-12">
+        <p>&copy; <span id="year"></span> YoBrunox - Ingeniero de sistemas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let date = new Date()
+        thisYear = date.getUTCFullYear()
+
+        const texto = thisYear.toString();
+        document.getElementById("year").textContent = texto;
+    </script>
+</body>
+</html>
